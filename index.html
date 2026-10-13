@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" style="scroll-padding-top: 80px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUFASA MARKETING | Digital Marketing & UAE Business Services</title>
+    <meta name="description" content="Explore social media marketing, UAE business setup assistance, Dubai visa services, flight ticketing, tour packages, and website development with MUFASA MARKETING.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        midnight: '#10172A',
+                        royal: '#2457F5',
+                        electric: '#4D7CFE',
+                        gold: '#D6AE62',
+                        soft: '#F5F7FB',
+                        heading: '#111827',
+                        bodytext: '#626B7B',
+                        border: '#E4E8F0'
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'premium': '0 4px 20px rgba(0, 0, 0, 0.05)',
+                        'premium-hover': '0 10px 40px rgba(36, 87, 245, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles & Utilities */
+        :root {
+            --brand-midnight: #10172A;
+            --brand-royal: #2457F5;
+            --brand-gold: #D6AE62;
+        }
+        
+        body {
+            color: #626B7B;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: #111827;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F5F7FB; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2457F5; 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10172A; 
+        }
+
+        /* Scroll Progress Bar */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: linear-gradient(to right, var(--brand-royal), var(--brand-gold));
+            z-index: 1000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradients & Backgrounds */
+        .bg-gradient-hero {
+            background: linear-gradient(135deg, #10172A 0%, #1a2744 100%);
+        }
+        
+        /* Accordion Transitions */
+        .accordion-content {
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        .accordion-button[aria-expanded="true"] + .accordion-content {
+            max-height: 500px;
+        }
+        .accordion-icon {
+            transition: transform 0.3s ease;
+        }
+        .accordion-button[aria-expanded="true"] .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Premium image overlays */
+        .image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(16, 23, 42, 0.8) 0%, rgba(16, 23, 42, 0) 50%);
+        }
+
+        /* Custom Message Box (Alternative to alert) */
+        #custom-message-box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+        #custom-message-box.show {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            pointer-events: auto;
+        }
+        #message-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(16, 23, 42, 0.7);
+            backdrop-filter: blur(4px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 9998;
+        }
+        #message-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-white antialiased">
+
+    <div id="scroll-progress"></div>
+
+    <!-- Section 1: Announcement Bar -->
+    <div id="announcement-bar" class="bg-midnight text-white py-2 px-4 text-center text-sm md:text-base font-inter relative z-50 flex justify-center items-center gap-4 transition-all duration-300">
+        <p>
+            <span class="font-semibold text-gold">Your Ambitions. Our Expertise. One Powerful Partnership.</span> 
+            <span class="hidden md:inline ml-2 opacity-80">| Digital Growth | UAE Business Services | Travel Solutions</span>
+        </p>
+        <button id="close-announcement" class="absolute right-4 text-white/70 hover:text-white" aria-label="Close announcement">
+            <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+    </div>
+
+    <!-- Section 2: Header and Navigation -->
+    <header id="header-navigation" class="sticky top-0 w-full z-40 bg-white/95 backdrop-blur-md border-b border-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center gap-2 group">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizVgAt0VSIdgv-PTCutAL2wVLUB_WGVv6iy1eJWtCFxuNHg3it3Bs2aSoEcY6M1dpiv6lxSIxNw94GTOP7TToHTYbB6FPWNVCm-SARNjZ-fCAQNdECwDQ36HEnCXDpZrqEsjjdRcypABJBkbpXPHQV-n_7F1w89Nx_V-cNNRpT1XRNWMUQhgnpMfiCRsxy/s315/mufasa%20logo%20%281%29.jpeg" alt="Mufasa Marketing Logo" class="h-10 w-10 rounded-md object-cover shadow-sm">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl leading-none text-midnight tracking-tight">MUFASA</span>
+                        <span class="text-[10px] font-bold text-royal tracking-[0.2em] uppercase mt-1">Marketing</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-6 xl:gap-8 font-inter font-medium text-sm text-bodytext">
+                    <a href="#home" class="hover:text-royal transition-colors nav-link">Home</a>
+                    <a href="#about" class="hover:text-royal transition-colors nav-link">About</a>
+                    <a href="#services" class="hover:text-royal transition-colors nav-link">Services</a>
+                    <a href="#business-setup" class="hover:text-royal transition-colors nav-link">Business Setup</a>
+                    <a href="#visa-services" class="hover:text-royal transition-colors nav-link">Visa</a>
+                    <a href="#travel-services" class="hover:text-royal transition-colors nav-link">Travel</a>
+                    <a href="#web-development" class="hover:text-royal transition-colors nav-link">Web Dev</a>
+                    <a href="#contact" class="hover:text-royal transition-colors nav-link">Contact</a>
+                </nav>
+
+                <!-- CTA & Mobile Toggle -->
+                <div class="flex items-center gap-4">
+                    <a href="https://wa.me/971521204350?text=Hello%20MUFASA%20MARKETING%2C%20I%20would%20like%20to%20discuss%20your%20services." target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-2 bg-royal hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-medium transition-colors shadow-md hover:shadow-lg">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        Let's Talk
+                    </a>
+                    <button id="mobile-menu-btn" class="lg:hidden p-2 text-heading hover:text-royal" aria-label="Open menu">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-white lg:hidden overflow-y-auto">
+        <div class="flex flex-col h-full px-6 py-8">
+            <div class="flex justify-between items-center mb-10">
+                <a href="#home" class="flex items-center gap-2" onclick="closeMobileMenu()">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizVgAt0VSIdgv-PTCutAL2wVLUB_WGVv6iy1eJWtCFxuNHg3it3Bs2aSoEcY6M1dpiv6lxSIxNw94GTOP7TToHTYbB6FPWNVCm-SARNjZ-fCAQNdECwDQ36HEnCXDpZrqEsjjdRcypABJBkbpXPHQV-n_7F1w89Nx_V-cNNRpT1XRNWMUQhgnpMfiCRsxy/s315/mufasa%20logo%20%281%29.jpeg" alt="Mufasa Marketing Logo" class="h-10 w-10 rounded-md object-cover">
+                    <div class="flex flex-col">
+                        <span class="font-bold text-xl leading-none text-midnight">MUFASA</span>
+                        <span class="text-[10px] font-bold text-royal tracking-[0.2em] uppercase mt-1">Marketing</span>
+                    </div>
+                </a>
+                <button id="close-menu-btn" class="p-2 text-heading hover:text-royal" aria-label="Close menu">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <nav class="flex flex-col gap-6 text-lg font-semibold text-heading mb-10">
+                <a href="#home" class="mobile-link">Home</a>
+                <a href="#about" class="mobile-link">About</a>
+                <a href="#services" class="mobile-link">Services</a>
+                <a href="#business-setup" class="mobile-link">Business Setup</a>
+                <a href="#visa-services" class="mobile-link">Visa Services</a>
+                <a href="#travel-services" class="mobile-link">Travel</a>
+                <a href="#web-development" class="mobile-link">Web Development</a>
+                <a href="#contact" class="mobile-link">Contact</a>
+            </nav>
+            
+            <div class="mt-auto flex flex-col gap-4">
+                <a href="https://wa.me/971521204350" target="_blank" rel="noopener noreferrer" class="flex justify-center items-center gap-2 bg-royal hover:bg-blue-700 text-white w-full py-4 rounded-xl font-medium transition-colors">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Discuss Your Requirements
+                </a>
+                <a href="mailto:mufasamarketingdxb@gmail.com" class="flex justify-center items-center gap-2 bg-soft text-heading w-full py-4 rounded-xl font-medium transition-colors">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                    Email Us
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Section 3: Hero Section -->
+        <section id="home" class="relative pt-10 pb-20 lg:pt-20 lg:pb-28 bg-gradient-hero overflow-hidden text-white">
+            <!-- Decorative Elements -->
+            <div class="absolute inset-0 overflow-hidden pointer-events-none">
+                <div class="absolute top-[-10%] right-[-5%] w-96 h-96 bg-electric/20 rounded-full blur-[100px]"></div>
+                <div class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-royal/10 rounded-full blur-[120px]"></div>
+                <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 40px 40px;"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+                    
+                    <!-- Text Content -->
+                    <div class="lg:w-1/2 reveal">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur border border-white/20 text-gold text-sm font-semibold mb-6">
+                            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
+                            Premium Business Solutions
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+                            Your Vision.<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-electric to-white">Our Strategy.</span><br>
+                            Your Next Big Move.
+                        </h1>
+                        <p class="text-lg text-white/80 mb-8 max-w-xl font-inter leading-relaxed">
+                            From building your digital presence to establishing your business in the UAE, MUFASA MARKETING brings digital marketing, business setup assistance, visa support, travel solutions, and website development together under one roof.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                            <a href="https://wa.me/971521204350?text=Hello%20MUFASA%20MARKETING%2C%20I%20would%20like%20to%20discuss%20your%20services." target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-royal hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:-translate-y-1 hover:shadow-[0_10px_20px_rgba(36,87,245,0.3)]">
+                                Discuss Your Requirements
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                            <a href="#services" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur border border-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all">
+                                Explore Our Services
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm font-medium text-white/70 pt-6 border-t border-white/10">
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="text-gold w-4 h-4"></i>
+                                Digital Marketing Solutions
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="text-gold w-4 h-4"></i>
+                                UAE Business Assistance
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i data-lucide="check-circle-2" class="text-gold w-4 h-4"></i>
+                                Travel & Web Services
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Content -->
+                    <div class="lg:w-1/2 w-full reveal" style="transition-delay: 200ms;">
+                        <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/3] group">
+                            <!-- Using high quality Unsplash Dubai placeholder -->
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgLeSZqraD6TX8ttzkW8wFrDLKKtAYe2lWgnww084SCj51FwMtk1AhSMXPEVCIvbwPrx_Tyy8kzYftRb_XyHjsRE7h6eXM2oiAAJQfTgTCEOPHhgCEdNBB5Hdkxmsg1-icsI37KfTcmNhapdBzAyJ5VfL2ryl_rbdc8E1cTN4HSNzL0or3lAdfvZFG1fIhr/s2400/Gemini_Generated_Image_gesuy9gesuy9gesu.png?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Dubai Skyline modern business" class="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                            <div class="image-overlay"></div>
+                            
+                            <!-- Floating Card -->
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl flex items-center gap-4">
+                                <div class="w-12 h-12 bg-royal rounded-lg flex items-center justify-center text-white shrink-0">
+                                    <i data-lucide="trending-up" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold">Practical Solutions</h4>
+                                    <p class="text-white/70 text-sm font-inter">For ambitious entrepreneurs and growing brands.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: About -->
+        <section id="about" class="py-20 lg:py-28 bg-soft relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    
+                    <div class="lg:w-1/2 relative reveal">
+                        <div class="relative rounded-2xl overflow-hidden shadow-premium">
+                            <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Professional Business Meeting" class="w-full h-auto object-cover aspect-[4/5] sm:aspect-auto sm:h-[600px]" loading="lazy">
+                        </div>
+                        <div class="absolute -bottom-8 -right-8 w-64 p-6 bg-white rounded-2xl shadow-premium hidden md:block">
+                            <div class="flex items-center gap-4 mb-2">
+                                <div class="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold">
+                                    <i data-lucide="target" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="font-bold text-heading text-lg">One Partner</h4>
+                            </div>
+                            <p class="text-sm font-inter">Coordinated digital and business solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/2 reveal" style="transition-delay: 200ms;">
+                        <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">Who We Are</span>
+                        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">One Partner. Multiple Possibilities.</h2>
+                        <p class="text-lg text-bodytext mb-8 font-inter">
+                            MUFASA MARKETING helps businesses and individuals navigate digital growth, UAE business opportunities, travel requirements, and online development through a connected range of professional services.
+                        </p>
+
+                        <div class="space-y-6 mb-10">
+                            <!-- Block 1 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white shadow flex items-center justify-center text-royal shrink-0">
+                                    <i data-lucide="briefcase" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-xl mb-2 text-heading">Business-Focused Thinking</h3>
+                                    <p class="text-bodytext font-inter">Solutions shaped around your goals, audience, requirements, and priorities.</p>
+                                </div>
+                            </div>
+                            <!-- Block 2 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white shadow flex items-center justify-center text-royal shrink-0">
+                                    <i data-lucide="network" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-xl mb-2 text-heading">Integrated Services</h3>
+                                    <p class="text-bodytext font-inter">Digital, business, travel, and web solutions coordinated through one point of contact.</p>
+                                </div>
+                            </div>
+                            <!-- Block 3 -->
+                            <div class="flex gap-4">
+                                <div class="w-12 h-12 rounded-xl bg-white shadow flex items-center justify-center text-royal shrink-0">
+                                    <i data-lucide="users" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold text-xl mb-2 text-heading">A Client-First Approach</h3>
+                                    <p class="text-bodytext font-inter">Clear communication, practical recommendations, and attention to each project's requirements.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="inline-flex items-center gap-2 bg-midnight hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold transition-colors shadow-md hover:shadow-lg">
+                            Get to Know Us
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Core Services -->
+        <section id="services" class="py-20 lg:py-28 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">What We Do</span>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Everything You Need to Move Forward.</h2>
+                    <p class="text-lg text-bodytext font-inter">
+                        Explore connected services designed for your brand, business, travel plans, and digital ambitions.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <a href="#social-media" class="group bg-white border border-border p-8 rounded-2xl shadow-premium hover:shadow-premium-hover transition-all duration-300 hover:-translate-y-2 reveal">
+                        <div class="w-14 h-14 bg-soft rounded-xl flex items-center justify-center text-royal mb-6 group-hover:bg-royal group-hover:text-white transition-colors">
+                            <i data-lucide="bar-chart-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-heading">Social Media Marketing</h3>
+                        <p class="text-bodytext mb-4 font-inter text-sm line-clamp-3">Build brand visibility, strengthen engagement, and connect with your target audience through strategic campaigns.</p>
+                        <ul class="space-y-2 text-sm text-bodytext/80 mb-6 font-inter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Strategy & Content</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Reels & Short-form</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Paid Ads Support</li>
+                        </ul>
+                        <span class="inline-flex items-center gap-2 text-royal font-semibold text-sm group-hover:gap-3 transition-all">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </a>
+
+                    <!-- Service 2 -->
+                    <a href="#business-setup" class="group bg-white border border-border p-8 rounded-2xl shadow-premium hover:shadow-premium-hover transition-all duration-300 hover:-translate-y-2 reveal" style="transition-delay: 100ms;">
+                        <div class="w-14 h-14 bg-soft rounded-xl flex items-center justify-center text-royal mb-6 group-hover:bg-royal group-hover:text-white transition-colors">
+                            <i data-lucide="building-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-heading">UAE Business Setup</h3>
+                        <p class="text-bodytext mb-4 font-inter text-sm line-clamp-3">Assistance navigating business establishment options and steps involved in setting up a company in the UAE.</p>
+                        <ul class="space-y-2 text-sm text-bodytext/80 mb-6 font-inter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Activity Guidance</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Setup Assistance</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Document Coordination</li>
+                        </ul>
+                        <span class="inline-flex items-center gap-2 text-royal font-semibold text-sm group-hover:gap-3 transition-all">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </a>
+
+                    <!-- Service 3 -->
+                    <a href="#visa-services" class="group bg-white border border-border p-8 rounded-2xl shadow-premium hover:shadow-premium-hover transition-all duration-300 hover:-translate-y-2 reveal" style="transition-delay: 200ms;">
+                        <div class="w-14 h-14 bg-soft rounded-xl flex items-center justify-center text-royal mb-6 group-hover:bg-royal group-hover:text-white transition-colors">
+                            <i data-lucide="stamp" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-heading">Dubai Visa Services</h3>
+                        <p class="text-bodytext mb-4 font-inter text-sm line-clamp-3">Guidance and coordination for relevant UAE visa and immigration-related application processes.</p>
+                        <ul class="space-y-2 text-sm text-bodytext/80 mb-6 font-inter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Tourist Visas</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Residence Visa Guidance</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Application Follow-up</li>
+                        </ul>
+                        <span class="inline-flex items-center gap-2 text-royal font-semibold text-sm group-hover:gap-3 transition-all">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </a>
+
+                    <!-- Service 4 -->
+                    <a href="#travel-services" class="group bg-white border border-border p-8 rounded-2xl shadow-premium hover:shadow-premium-hover transition-all duration-300 hover:-translate-y-2 reveal" style="transition-delay: 300ms;">
+                        <div class="w-14 h-14 bg-soft rounded-xl flex items-center justify-center text-royal mb-6 group-hover:bg-royal group-hover:text-white transition-colors">
+                            <i data-lucide="plane" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-heading">Ticketing & Tour Packages</h3>
+                        <p class="text-bodytext mb-4 font-inter text-sm line-clamp-3">Flight ticketing assistance and travel packages for Dubai and destinations, tailored to your budget.</p>
+                        <ul class="space-y-2 text-sm text-bodytext/80 mb-6 font-inter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Flight Bookings</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Holiday Packages</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Hotel Coordination</li>
+                        </ul>
+                        <span class="inline-flex items-center gap-2 text-royal font-semibold text-sm group-hover:gap-3 transition-all">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </a>
+
+                    <!-- Service 5 -->
+                    <a href="#web-development" class="group bg-white border border-border p-8 rounded-2xl shadow-premium hover:shadow-premium-hover transition-all duration-300 hover:-translate-y-2 reveal" style="transition-delay: 400ms;">
+                        <div class="w-14 h-14 bg-soft rounded-xl flex items-center justify-center text-royal mb-6 group-hover:bg-royal group-hover:text-white transition-colors">
+                            <i data-lucide="code-2" class="w-7 h-7"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-heading">Website Development</h3>
+                        <p class="text-bodytext mb-4 font-inter text-sm line-clamp-3">Create a professional online presence with modern, responsive websites built around your business goals.</p>
+                        <ul class="space-y-2 text-sm text-bodytext/80 mb-6 font-inter">
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Business Websites</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> E-commerce Solutions</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-royal"></i> Responsive Design</li>
+                        </ul>
+                        <span class="inline-flex items-center gap-2 text-royal font-semibold text-sm group-hover:gap-3 transition-all">
+                            Learn more <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </span>
+                    </a>
+                    
+                    <!-- Contact Box (Occupies 6th slot) -->
+                    <div class="bg-midnight rounded-2xl p-8 flex flex-col justify-center items-center text-center shadow-premium reveal" style="transition-delay: 500ms;">
+                        <h3 class="text-xl font-bold mb-4 text-white">Need a customized solution?</h3>
+                        <p class="text-white/70 font-inter text-sm mb-6">Let's discuss how we can combine our services for your specific requirements.</p>
+                        <a href="#contact" class="bg-royal hover:bg-blue-600 text-white px-6 py-3 rounded-xl font-medium transition-colors w-full">Contact Us Today</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Social Media Marketing -->
+        <section id="social-media" class="py-20 bg-soft border-t border-border/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
+                    <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
+                        <!-- Module Grid -->
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-border">
+                            <i data-lucide="calendar" class="w-6 h-6 text-royal mb-4"></i>
+                            <h4 class="font-bold mb-2">Social Media Management</h4>
+                            <p class="text-sm font-inter text-bodytext">Planning, publishing, and coordinating content across suitable platforms.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-border">
+                            <i data-lucide="image" class="w-6 h-6 text-royal mb-4"></i>
+                            <h4 class="font-bold mb-2">Creative Content Production</h4>
+                            <p class="text-sm font-inter text-bodytext">Branded visual posts, creatives, and short-form video content.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-border">
+                            <i data-lucide="megaphone" class="w-6 h-6 text-royal mb-4"></i>
+                            <h4 class="font-bold mb-2">Paid Advertising Support</h4>
+                            <p class="text-sm font-inter text-bodytext">Campaign planning aligned with defined business objectives and budgets.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-xl shadow-sm border border-border">
+                            <i data-lucide="pie-chart" class="w-6 h-6 text-royal mb-4"></i>
+                            <h4 class="font-bold mb-2">Performance Monitoring</h4>
+                            <p class="text-sm font-inter text-bodytext">Review relevant metrics to guide future improvements.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-1/2 reveal">
+                        <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">Grow Your Brand</span>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-6">Turn Your Social Presence into a Business Asset.</h2>
+                        <p class="text-lg text-bodytext mb-8 font-inter">
+                            Create a stronger digital presence with social media strategies and content designed to help your business reach relevant audiences and communicate its value.
+                        </p>
+                        <a href="https://wa.me/971521204350?text=Hello%20MUFASA%20MARKETING%2C%20I%20am%20interested%20in%20social%20media%20marketing%20services." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-royal hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors shadow-md">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            Grow My Business
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: UAE Business Setup -->
+        <section id="business-setup" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">Build Your UAE Business</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">Take Your Business Ambitions to the UAE.</h2>
+                    <p class="text-lg text-bodytext font-inter">
+                        Understand your potential company formation options with assistance navigating relevant business activities, licensing pathways, documentation, and setup procedures.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- Service Categories -->
+                    <div class="p-6 bg-soft rounded-xl reveal"><h4 class="font-bold mb-2 flex items-center gap-2"><i data-lucide="compass" class="w-5 h-5 text-royal"></i> Activity Guidance</h4><p class="text-sm font-inter">Identify the activity categories and requirements relevant to your proposed business.</p></div>
+                    <div class="p-6 bg-soft rounded-xl reveal"><h4 class="font-bold mb-2 flex items-center gap-2"><i data-lucide="building" class="w-5 h-5 text-royal"></i> Free Zone Setup</h4><p class="text-sm font-inter">Explore applicable free zone establishment options based on your objectives.</p></div>
+                    <div class="p-6 bg-soft rounded-xl reveal"><h4 class="font-bold mb-2 flex items-center gap-2"><i data-lucide="landmark" class="w-5 h-5 text-royal"></i> Mainland Setup</h4><p class="text-sm font-inter">Understand relevant mainland company formation routes and requirements.</p></div>
+                    <div class="p-6 bg-soft rounded-xl reveal"><h4 class="font-bold mb-2 flex items-center gap-2"><i data-lucide="file-text" class="w-5 h-5 text-royal"></i> Documentation</h4><p class="text-sm font-inter">Receive support organizing required documents and coordinating the application.</p></div>
+                    <div class="p-6 bg-soft rounded-xl reveal"><h4 class="font-bold mb-2 flex items-center gap-2"><i data-lucide="file-check" class="w-5 h-5 text-royal"></i> License Process</h4><p class="text-sm font-inter">Understand the relevant licensing steps, subject to chosen activity and authority.</p></div>
+                    <div class="p-6 bg-soft rounded-xl reveal"><h4 class="font-bold mb-2 flex items-center gap-2"><i data-lucide="refresh-cw" class="w-5 h-5 text-royal"></i> Ongoing Coordination</h4><p class="text-sm font-inter">Receive guidance about relevant next steps after initial company establishment.</p></div>
+                </div>
+
+                <div class="bg-midnight rounded-2xl p-8 lg:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-8 reveal">
+                    <div class="lg:w-2/3">
+                        <h3 class="text-2xl font-bold mb-4">Ready to start the process?</h3>
+                        <p class="text-white/80 font-inter mb-4">1. Share your idea &rarr; 2. Discuss options &rarr; 3. Review requirements &rarr; 4. Coordinate application &rarr; 5. Follow up</p>
+                        <p class="text-xs text-white/50 font-inter max-w-2xl">* Disclaimer: Actual eligibility, licensing, costs, timelines, and approvals depend on the selected activity, jurisdiction, competent authority, and applicable rules.</p>
+                    </div>
+                    <div>
+                        <a href="https://wa.me/971521204350?text=Hello%20MUFASA%20MARKETING%2C%20I%20would%20like%20assistance%20with%20setting%20up%20a%20business%20in%20the%20UAE." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-royal hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors whitespace-nowrap">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            Discuss Setup
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 8: Visa Services -->
+        <section id="visa-services" class="py-20 bg-soft border-t border-border/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 reveal">
+                        <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">Your UAE Journey</span>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-6">Navigate Your Visa Process with Greater Clarity.</h2>
+                        <p class="text-lg text-bodytext mb-6 font-inter">
+                            Get assistance understanding relevant UAE visa categories, documentation, eligibility requirements, and application procedures.
+                        </p>
+                        <div class="p-4 bg-yellow-50 border border-yellow-200 rounded-lg mb-8 text-sm font-inter text-yellow-800">
+                            <strong>Note:</strong> Visa requirements and decisions are determined by the relevant authorities and depend on individual circumstances.
+                        </div>
+                        <a href="https://wa.me/971521204350?text=Hello%20MUFASA%20MARKETING%2C%20I%20would%20like%20information%20about%20UAE%20visa%20services.%20Please%20guide%20me%20regarding%20the%20requirements." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-royal hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-semibold transition-colors shadow-md">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            Ask About Visa Requirements
+                        </a>
+                    </div>
+                    
+                    <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
+                        <div class="bg-white p-5 rounded-xl shadow-sm"><h4 class="font-bold text-heading">Tourist Visa</h4><p class="text-sm font-inter text-bodytext mt-1">Guidance on requirements and documents.</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm"><h4 class="font-bold text-heading">Visit Visa</h4><p class="text-sm font-inter text-bodytext mt-1">Information and coordination for visits.</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm"><h4 class="font-bold text-heading">Residence Visa</h4><p class="text-sm font-inter text-bodytext mt-1">Guidance on pathways and requirements.</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm"><h4 class="font-bold text-heading">Business Visa</h4><p class="text-sm font-inter text-bodytext mt-1">Procedures connected to business activities.</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm"><h4 class="font-bold text-heading">Document Prep</h4><p class="text-sm font-inter text-bodytext mt-1">Help organizing application documents.</p></div>
+                        <div class="bg-white p-5 rounded-xl shadow-sm"><h4 class="font-bold text-heading">Follow-Up</h4><p class="text-sm font-inter text-bodytext mt-1">Coordination where arrangement permits.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Travel Services -->
+        <section id="travel-services" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">Explore More</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">Your Next Journey Starts Here.</h2>
+                    <p class="text-lg text-bodytext font-inter">
+                        Plan your trip with flight ticketing assistance, travel coordination, and tour packages designed around your preferred destinations, schedule, and budget.
+                    </p>
+                </div>
+
+                <!-- Feature visual and cards -->
+                <div class="flex flex-col-reverse lg:flex-row gap-8 mb-16">
+                    <div class="lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 reveal">
+                        <div class="border border-border p-5 rounded-xl"><i data-lucide="ticket" class="w-6 h-6 text-royal mb-3"></i><h4 class="font-bold">Flight Ticketing</h4><p class="text-sm font-inter text-bodytext mt-1">Flight options and booking assistance.</p></div>
+                        <div class="border border-border p-5 rounded-xl"><i data-lucide="map" class="w-6 h-6 text-royal mb-3"></i><h4 class="font-bold">Dubai City Tours</h4><p class="text-sm font-inter text-bodytext mt-1">Explore sightseeing and city experiences.</p></div>
+                        <div class="border border-border p-5 rounded-xl"><i data-lucide="sun" class="w-6 h-6 text-royal mb-3"></i><h4 class="font-bold">Holiday Packages</h4><p class="text-sm font-inter text-bodytext mt-1">Packages tailored to interests and budget.</p></div>
+                        <div class="border border-border p-5 rounded-xl"><i data-lucide="users" class="w-6 h-6 text-royal mb-3"></i><h4 class="font-bold">Family Holidays</h4><p class="text-sm font-inter text-bodytext mt-1">Arrangements suited for families.</p></div>
+                        <div class="border border-border p-5 rounded-xl"><i data-lucide="hotel" class="w-6 h-6 text-royal mb-3"></i><h4 class="font-bold">Hotel Coordination</h4><p class="text-sm font-inter text-bodytext mt-1">Accommodation options for travel.</p></div>
+                        <div class="border border-border p-5 rounded-xl"><i data-lucide="map-pin" class="w-6 h-6 text-royal mb-3"></i><h4 class="font-bold">Custom Itineraries</h4><p class="text-sm font-inter text-bodytext mt-1">Travel plans suited to preferences.</p></div>
+                    </div>
+                    
+                    <div class="lg:w-1/2 rounded-2xl overflow-hidden shadow-premium relative reveal">
+                        <img src="https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Dubai Tourism" class="w-full h-full object-cover min-h-[400px]" loading="lazy">
+                        <div class="image-overlay flex flex-col justify-end p-8">
+                            <h3 class="text-white text-2xl font-bold mb-2">Ready to explore?</h3>
+                            <a href="https://wa.me/971521204350?text=Hello%20MUFASA%20MARKETING%2C%20I%20would%20like%20to%20explore%20flight%20tickets%20or%20travel%20packages." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-white text-midnight hover:bg-gray-100 px-6 py-3 rounded-xl font-semibold transition-colors w-max">
+                                Plan My Trip
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 10: Website Development -->
+        <section id="web-development" class="py-20 bg-midnight text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-16">
+                    <div class="lg:w-1/2 reveal">
+                        <span class="text-gold font-bold tracking-wider text-sm uppercase mb-3 block">Your Digital Home</span>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-6">Websites That Make Your Business Stand Out.</h2>
+                        <p class="text-lg text-white/80 mb-8 font-inter">
+                            Build a credible and engaging online presence with responsive websites focused on usability, brand identity, and business objectives.
+                        </p>
+                        
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 font-inter text-white/90">
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-gold"></i> Business Websites</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-gold"></i> E-commerce Solutions</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-gold"></i> Landing Pages</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-gold"></i> Website Redesign</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-gold"></i> Responsive Design</li>
+                            <li class="flex items-center gap-2"><i data-lucide="check-circle" class="w-5 h-5 text-gold"></i> Technical SEO Setup</li>
+                        </ul>
+
+                        <a href="https://wa.me/971521204350?text=Hello%20MUFASA%20MARKETING%2C%20I%20would%20like%20to%20discuss%20a%20website%20development%20project." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-royal hover:bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold transition-colors shadow-md">
+                            <i data-lucide="code" class="w-5 h-5"></i>
+                            Build My Website
+                        </a>
+                    </div>
+                    
+                    <div class="lg:w-1/2 relative reveal">
+                        <!-- Simulated Mockups container -->
+                        <div class="relative bg-white/5 border border-white/10 rounded-2xl p-4 sm:p-8 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Web Development Portfolio" class="w-full rounded-lg shadow-2xl opacity-90 hover:opacity-100 transition-opacity" loading="lazy">
+                            <div class="absolute bottom-4 left-4 right-4 bg-midnight/90 backdrop-blur border border-white/20 p-4 rounded-xl flex justify-between items-center text-sm font-inter">
+                                <span>Responsive • Fast • SEO Friendly</span>
+                                <div class="flex gap-2">
+                                    <i data-lucide="smartphone" class="w-4 h-4 text-white/70"></i>
+                                    <i data-lucide="monitor" class="w-4 h-4 text-white/70"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: Why Choose Us -->
+        <section id="why-choose-us" class="py-20 bg-soft">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">The Mufasa Approach</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">Built Around Your Goals. Focused on Your Next Step.</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm reveal"><div class="w-12 h-12 bg-royal/10 text-royal rounded-xl flex items-center justify-center mb-4"><i data-lucide="git-merge" class="w-6 h-6"></i></div><h4 class="font-bold text-lg mb-2">Multiple Services, One Point</h4><p class="text-bodytext font-inter text-sm">Discuss marketing, setup, visa, travel, and web dev through a single contact point.</p></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm reveal" style="transition-delay: 100ms;"><div class="w-12 h-12 bg-royal/10 text-royal rounded-xl flex items-center justify-center mb-4"><i data-lucide="target" class="w-6 h-6"></i></div><h4 class="font-bold text-lg mb-2">Solutions Based on Needs</h4><p class="text-bodytext font-inter text-sm">Start with a conversation about your objectives, requirements, and budget.</p></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm reveal" style="transition-delay: 200ms;"><div class="w-12 h-12 bg-royal/10 text-royal rounded-xl flex items-center justify-center mb-4"><i data-lucide="message-square" class="w-6 h-6"></i></div><h4 class="font-bold text-lg mb-2">Clear Communication</h4><p class="text-bodytext font-inter text-sm">Understand the scope of a service, next steps, and information needed.</p></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm reveal" style="transition-delay: 300ms;"><div class="w-12 h-12 bg-royal/10 text-royal rounded-xl flex items-center justify-center mb-4"><i data-lucide="lightbulb" class="w-6 h-6"></i></div><h4 class="font-bold text-lg mb-2">Practical Recommendations</h4><p class="text-bodytext font-inter text-sm">Explore service options relevant to your business or personal requirements.</p></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm reveal" style="transition-delay: 400ms;"><div class="w-12 h-12 bg-royal/10 text-royal rounded-xl flex items-center justify-center mb-4"><i data-lucide="smartphone" class="w-6 h-6"></i></div><h4 class="font-bold text-lg mb-2">Digital-First Convenience</h4><p class="text-bodytext font-inter text-sm">Make initial inquiries through convenient digital communication channels.</p></div>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm reveal" style="transition-delay: 500ms;"><div class="w-12 h-12 bg-royal/10 text-royal rounded-xl flex items-center justify-center mb-4"><i data-lucide="layers" class="w-6 h-6"></i></div><h4 class="font-bold text-lg mb-2">Support Across Needs</h4><p class="text-bodytext font-inter text-sm">Access a coordinated range of digital, business, travel, and website-related services.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 12: How It Works -->
+        <section id="our-process" class="py-20 bg-white border-t border-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+                    <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">Simple. Clear. Practical.</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">From First Conversation to the Next Step.</h2>
+                </div>
+
+                <div class="relative reveal">
+                    <!-- Desktop Line -->
+                    <div class="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-border z-0"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="w-16 h-16 rounded-full bg-midnight text-white flex items-center justify-center text-xl font-bold mb-6 border-4 border-white shadow-md">01</div>
+                            <h4 class="font-bold text-lg mb-2">Tell Us What You Need</h4>
+                            <p class="text-bodytext font-inter text-sm">Choose a service and explain requirements via WhatsApp or form.</p>
+                        </div>
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="w-16 h-16 rounded-full bg-white text-royal border-2 border-royal flex items-center justify-center text-xl font-bold mb-6 shadow-md">02</div>
+                            <h4 class="font-bold text-lg mb-2">Discuss Options</h4>
+                            <p class="text-bodytext font-inter text-sm">Review relevant service options, scope, and available info.</p>
+                        </div>
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="w-16 h-16 rounded-full bg-white text-royal border-2 border-royal flex items-center justify-center text-xl font-bold mb-6 shadow-md">03</div>
+                            <h4 class="font-bold text-lg mb-2">Confirm Details</h4>
+                            <p class="text-bodytext font-inter text-sm">Discuss applicable pricing, timelines, documents, and terms.</p>
+                        </div>
+                        <div class="flex flex-col items-center md:items-start text-center md:text-left">
+                            <div class="w-16 h-16 rounded-full bg-gold text-midnight flex items-center justify-center text-xl font-bold mb-6 border-4 border-white shadow-md">04</div>
+                            <h4 class="font-bold text-lg mb-2">Move Forward</h4>
+                            <p class="text-bodytext font-inter text-sm">Proceed with the agreed service and coordinate next steps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 13: FAQ -->
+        <section id="faq" class="py-20 bg-soft">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12 reveal">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6">Questions? Let's Make Things Clear.</h2>
+                </div>
+
+                <div class="space-y-4 reveal" id="faq-container">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
+                        <button class="accordion-button w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none focus:bg-gray-50" aria-expanded="false" aria-controls="faq-1">
+                            <span>What services does MUFASA MARKETING provide?</span>
+                            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-royal"></i>
+                        </button>
+                        <div id="faq-1" class="accordion-content px-6 bg-white">
+                            <p class="pb-4 font-inter text-bodytext text-sm">We offer social media marketing, UAE business setup assistance, Dubai and UAE visa-related assistance, ticketing and tour package inquiries, and website development.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
+                        <button class="accordion-button w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none focus:bg-gray-50" aria-expanded="false" aria-controls="faq-2">
+                            <span>Can I contact you through WhatsApp?</span>
+                            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-royal"></i>
+                        </button>
+                        <div id="faq-2" class="accordion-content px-6 bg-white">
+                            <p class="pb-4 font-inter text-bodytext text-sm">Yes. Use the WhatsApp buttons on the website to start a conversation and explain your requirements.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
+                        <button class="accordion-button w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none focus:bg-gray-50" aria-expanded="false" aria-controls="faq-3">
+                            <span>Do you assist with setting up a company in Dubai?</span>
+                            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-royal"></i>
+                        </button>
+                        <div id="faq-3" class="accordion-content px-6 bg-white">
+                            <p class="pb-4 font-inter text-bodytext text-sm">We provide assistance navigating relevant UAE company setup options and procedures. The available routes and requirements depend on your proposed business activity and the applicable authority.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
+                        <button class="accordion-button w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none focus:bg-gray-50" aria-expanded="false" aria-controls="faq-4">
+                            <span>Can you guarantee UAE visa approval?</span>
+                            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-royal"></i>
+                        </button>
+                        <div id="faq-4" class="accordion-content px-6 bg-white">
+                            <p class="pb-4 font-inter text-bodytext text-sm">No. Visa approval is determined by the relevant authorities and depends on eligibility, documentation, and applicable rules. We can discuss available assistance and relevant requirements.</p>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-white rounded-xl shadow-sm border border-border overflow-hidden">
+                        <button class="accordion-button w-full px-6 py-4 text-left font-bold flex justify-between items-center focus:outline-none focus:bg-gray-50" aria-expanded="false" aria-controls="faq-5">
+                            <span>How do I get started?</span>
+                            <i data-lucide="chevron-down" class="accordion-icon w-5 h-5 text-royal"></i>
+                        </button>
+                        <div id="faq-5" class="accordion-content px-6 bg-white">
+                            <p class="pb-4 font-inter text-bodytext text-sm">Choose the relevant service and contact us through WhatsApp or the inquiry form. We will use the information you provide to discuss the appropriate next steps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 14: Contact Form Section -->
+        <section id="contact" class="py-20 bg-[#EAF0FF]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-16">
+                    
+                    <div class="lg:w-1/3 reveal">
+                        <span class="text-royal font-bold tracking-wider text-sm uppercase mb-3 block">Let's Connect</span>
+                        <h2 class="text-3xl lg:text-4xl font-bold mb-6">Tell Us What You Have in Mind.</h2>
+                        <p class="text-bodytext mb-8 font-inter">
+                            Whether you are growing a brand, planning a business in the UAE, exploring visa assistance, arranging travel, or building a website, start with a conversation.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <a href="mailto:mufasamarketingdxb@gmail.com" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-royal group-hover:bg-royal group-hover:text-white transition-colors">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-heading text-sm">Email Us</h4>
+                                    <p class="text-bodytext font-inter text-sm">mufasamarketingdxb@gmail.com</p>
+                                </div>
+                            </a>
+                            <a href="tel:+971521204350" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-sm text-royal group-hover:bg-royal group-hover:text-white transition-colors">
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-heading text-sm">Call Us</h4>
+                                    <p class="text-bodytext font-inter text-sm">+971 52 120 4350</p>
+                                </div>
+                            </a>
+                            <a href="https://wa.me/971521204350" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 group">
+                                <div class="w-12 h-12 bg-[#25D366] rounded-full flex items-center justify-center shadow-sm text-white group-hover:scale-110 transition-transform">
+                                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-heading text-sm">WhatsApp</h4>
+                                    <p class="text-bodytext font-inter text-sm">+971 52 120 4350</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="mt-8 pt-8 border-t border-blue-200">
+                            <p class="text-sm font-inter text-bodytext"><i data-lucide="map-pin" class="inline w-4 h-4 mr-1 text-royal"></i> Serving clients seeking UAE-focused business and digital solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-2/3 reveal bg-white p-8 lg:p-10 rounded-2xl shadow-premium border border-border">
+                        <h3 class="text-2xl font-bold mb-6 text-heading">Send Us an Inquiry</h3>
+                        <form id="inquiry-form" class="space-y-6" novalidate>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="full_name" class="block text-sm font-semibold text-heading mb-2">Full Name <span class="text-red-500">*</span></label>
+                                    <input type="text" id="full_name" name="full_name" required placeholder="Enter your full name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal focus:ring-2 focus:ring-royal/20 outline-none transition-all font-inter text-sm">
+                                    <span class="error-msg text-red-500 text-xs hidden mt-1">Full name is required.</span>
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-heading mb-2">Email Address <span class="text-red-500">*</span></label>
+                                    <input type="email" id="email" name="email" required placeholder="Enter your email address" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal focus:ring-2 focus:ring-royal/20 outline-none transition-all font-inter text-sm">
+                                    <span class="error-msg text-red-500 text-xs hidden mt-1">Valid email is required.</span>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="phone" class="block text-sm font-semibold text-heading mb-2">WhatsApp or Phone Number <span class="text-red-500">*</span></label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="Enter your contact number" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal focus:ring-2 focus:ring-royal/20 outline-none transition-all font-inter text-sm">
+                                    <span class="error-msg text-red-500 text-xs hidden mt-1">Contact number is required.</span>
+                                </div>
+                                <div>
+                                    <label for="service" class="block text-sm font-semibold text-heading mb-2">Which Service Are You Interested In? <span class="text-red-500">*</span></label>
+                                    <select id="service" name="service" required class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal focus:ring-2 focus:ring-royal/20 outline-none transition-all font-inter text-sm bg-white">
+                                        <option value="">Select a service...</option>
+                                        <option value="Social Media Marketing">Social Media Marketing</option>
+                                        <option value="UAE Business Setup">UAE Business Setup</option>
+                                        <option value="Dubai or UAE Visa Services">Dubai or UAE Visa Services</option>
+                                        <option value="Flight Ticketing">Flight Ticketing</option>
+                                        <option value="Tour Packages">Tour Packages</option>
+                                        <option value="Website Development">Website Development</option>
+                                        <option value="Multiple Services">Multiple Services</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <span class="error-msg text-red-500 text-xs hidden mt-1">Please select a service.</span>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-heading mb-2">Tell Us About Your Requirements <span class="text-red-500">*</span></label>
+                                <textarea id="message" name="message" required rows="4" placeholder="Briefly describe what you need" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-royal focus:ring-2 focus:ring-royal/20 outline-none transition-all font-inter text-sm resize-none"></textarea>
+                                <span class="error-msg text-red-500 text-xs hidden mt-1">Message is required.</span>
+                            </div>
+
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="consent" name="consent" required class="mt-1 w-4 h-4 text-royal bg-gray-100 border-gray-300 rounded focus:ring-royal">
+                                <label for="consent" class="text-sm font-inter text-bodytext">
+                                    I agree to the processing of my submitted information for the purpose of responding to my inquiry.
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full bg-midnight hover:bg-gray-800 text-white font-bold py-4 rounded-xl transition-colors shadow-md flex justify-center items-center gap-2">
+                                Send My Inquiry via WhatsApp
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Section 15: Footer -->
+    <footer id="footer" class="bg-midnight text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                
+                <!-- Col 1 -->
+                <div>
+                    <a href="#home" class="flex items-center gap-2 mb-6 inline-flex">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEizVgAt0VSIdgv-PTCutAL2wVLUB_WGVv6iy1eJWtCFxuNHg3it3Bs2aSoEcY6M1dpiv6lxSIxNw94GTOP7TToHTYbB6FPWNVCm-SARNjZ-fCAQNdECwDQ36HEnCXDpZrqEsjjdRcypABJBkbpXPHQV-n_7F1w89Nx_V-cNNRpT1XRNWMUQhgnpMfiCRsxy/s315/mufasa%20logo%20%281%29.jpeg" alt="Mufasa Marketing Logo" class="h-10 w-10 rounded-md object-cover ring-2 ring-white/20">
+                        <div class="flex flex-col">
+                            <span class="font-bold text-xl leading-none text-white">MUFASA</span>
+                            <span class="text-[10px] font-bold text-gold tracking-[0.2em] uppercase mt-1">Marketing</span>
+                        </div>
+                    </a>
+                    <p class="text-white/70 font-inter text-sm mb-6">
+                        Helping businesses and individuals explore digital marketing, UAE business assistance, travel solutions, and website development.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://wa.me/971521204350" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-royal transition-colors text-white" aria-label="WhatsApp">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                        <a href="mailto:mufasamarketingdxb@gmail.com" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-royal transition-colors text-white" aria-label="Email">
+                            <i data-lucide="mail" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Quick Links</h4>
+                    <ul class="space-y-3 font-inter text-sm text-white/70">
+                        <li><a href="#home" class="hover:text-gold transition-colors">Home</a></li>
+                        <li><a href="#about" class="hover:text-gold transition-colors">About Us</a></li>
+                        <li><a href="#services" class="hover:text-gold transition-colors">Our Services</a></li>
+                        <li><a href="#our-process" class="hover:text-gold transition-colors">How It Works</a></li>
+                        <li><a href="#faq" class="hover:text-gold transition-colors">FAQs</a></li>
+                        <li><a href="#contact" class="hover:text-gold transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Our Services</h4>
+                    <ul class="space-y-3 font-inter text-sm text-white/70">
+                        <li><a href="#social-media" class="hover:text-gold transition-colors">Social Media Marketing</a></li>
+                        <li><a href="#business-setup" class="hover:text-gold transition-colors">UAE Business Setup</a></li>
+                        <li><a href="#visa-services" class="hover:text-gold transition-colors">Visa Services</a></li>
+                        <li><a href="#travel-services" class="hover:text-gold transition-colors">Ticketing and Tours</a></li>
+                        <li><a href="#web-development" class="hover:text-gold transition-colors">Website Development</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="font-bold text-lg mb-6 text-white">Get in Touch</h4>
+                    <ul class="space-y-4 font-inter text-sm text-white/70">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-gold"></i>
+                            <a href="mailto:mufasamarketingdxb@gmail.com" class="hover:text-white transition-colors">mufasamarketingdxb@gmail.com</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-gold"></i>
+                            <a href="tel:+971521204350" class="hover:text-white transition-colors">+971 52 120 4350</a>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/971521204350" target="_blank" rel="noopener noreferrer" class="mt-6 inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#20b858] text-white px-5 py-2.5 rounded-lg font-medium transition-colors text-sm w-full justify-center">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i> Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-inter text-white/50">
+                <p>&copy; <span id="year"></span> MUFASA MARKETING. All rights reserved.</p>
+                
+                <p><a href="https://wa.me/91990741627" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors font-semibold">Website Designed and Developed by Ayan Das</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/971521204350?text=Hello%20MUFASA%20MARKETING%2C%20I%20would%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_15px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform group flex items-center justify-center" aria-label="Chat on WhatsApp">
+        <i data-lucide="message-circle" class="w-7 h-7"></i>
+        <span class="absolute right-full mr-4 bg-white text-heading text-sm px-3 py-1.5 rounded-lg font-semibold shadow-premium whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity hidden md:block">
+            Chat with us
+        </span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-24 right-6 z-40 bg-midnight text-white p-3 rounded-full shadow-lg opacity-0 translate-y-10 transition-all duration-300 pointer-events-none" aria-label="Back to top">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- Custom Message Box for Form Submit (Avoids alert) -->
+    <div id="message-overlay"></div>
+    <div id="custom-message-box" class="bg-white rounded-xl shadow-2xl p-8 max-w-sm w-[90%] text-center border-t-4 border-royal">
+        <div class="w-16 h-16 bg-blue-50 text-royal rounded-full flex items-center justify-center mx-auto mb-4">
+            <i data-lucide="send" class="w-8 h-8"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-2">Redirecting to WhatsApp</h3>
+        <p class="text-bodytext text-sm font-inter mb-6">Your inquiry details are ready. We will now open WhatsApp so you can send your message directly to us.</p>
+        <button id="close-msg-box" class="bg-royal text-white w-full py-3 rounded-lg font-bold hover:bg-blue-600 transition-colors">
+            Continue to WhatsApp
+        </button>
+    </div>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+        
+        // Set current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // DOM Elements
+        const header = document.getElementById('header-navigation');
+        const progressBar = document.getElementById('scroll-progress');
+        const backToTopBtn = document.getElementById('back-to-top');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const announcementBar = document.getElementById('announcement-bar');
+        const msgOverlay = document.getElementById('message-overlay');
+        const customMsgBox = document.getElementById('custom-message-box');
+        const closeMsgBtn = document.getElementById('close-msg-box');
+
+        let pendingWhatsAppUrl = '';
+
+        // Scroll logic (Passive listener for performance)
+        window.addEventListener('scroll', () => {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop;
+            let scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let progress = (scrollTop / scrollHeight) * 100;
+            
+            // Progress bar
+            progressBar.style.width = progress + '%';
+
+            // Sticky header styling
+            if (scrollTop > 50) {
+                header.classList.add('shadow-md');
+                if(announcementBar && !announcementBar.classList.contains('hidden')) {
+                    header.style.top = '0'; // overlap announcement if scrolled
+                }
+            } else {
+                header.classList.remove('shadow-md');
+                if(announcementBar && !announcementBar.classList.contains('hidden')) {
+                    header.style.top = '0';
+                }
+            }
+
+            // Back to top button
+            if (scrollTop > 500) {
+                backToTopBtn.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+                backToTopBtn.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+                backToTopBtn.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            }
+
+            // Highlight Active Section
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            sections.forEach(sec => {
+                let top = window.scrollY;
+                let offset = sec.offsetTop - 150;
+                let height = sec.offsetHeight;
+                let id = sec.getAttribute('id');
+                
+                if(top >= offset && top < offset + height) {
+                    navLinks.forEach(link => {
+                        link.classList.remove('text-royal', 'font-bold');
+                        if(link.getAttribute('href') === '#' + id) {
+                            link.classList.add('text-royal', 'font-bold');
+                        }
+                    });
+                }
+            });
+        }, { passive: true });
+
+        // Back to top click
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Announcement Close
+        if(document.getElementById('close-announcement')) {
+            document.getElementById('close-announcement').addEventListener('click', () => {
+                announcementBar.style.marginTop = `-${announcementBar.offsetHeight}px`;
+                setTimeout(() => {
+                    announcementBar.classList.add('hidden');
+                }, 300);
+            });
+        }
+
+        // Mobile Menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        const closeMobileMenu = () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        };
+
+        document.getElementById('close-menu-btn').addEventListener('click', closeMobileMenu);
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        // Close menu on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+                closeMobileMenu();
+            }
+        });
+
+        // FAQ Accordion
+        const accordions = document.querySelectorAll('.accordion-button');
+        accordions.forEach(acc => {
+            acc.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                // Close all others
+                accordions.forEach(otherAcc => {
+                    otherAcc.setAttribute('aria-expanded', 'false');
+                });
+                // Toggle current
+                this.setAttribute('aria-expanded', !expanded);
+            });
+        });
+
+        // Scroll Reveal Animations
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // only animate once
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Form Submission (WhatsApp Handoff)
+        const form = document.getElementById('inquiry-form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Basic validation check
+            let isValid = true;
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            inputs.forEach(input => {
+                if(!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('border-red-500');
+                    input.nextElementSibling.classList.remove('hidden');
+                } else {
+                    input.classList.remove('border-red-500');
+                    input.nextElementSibling.classList.add('hidden');
+                }
+            });
+
+            if(!document.getElementById('consent').checked) {
+                isValid = false;
+            }
+
+            if(isValid) {
+                const formData = new FormData(form);
+                const name = formData.get('full_name');
+                const email = formData.get('email');
+                const phone = formData.get('phone');
+                const service = formData.get('service');
+                const message = formData.get('message');
+                
+                const waMessage = `Hello MUFASA MARKETING, here is my inquiry:\n\n*Name:* ${name}\n*Email:* ${email}\n*Phone:* ${phone}\n*Service:* ${service}\n*Message:* ${message}`;
+                
+                pendingWhatsAppUrl = `https://wa.me/971521204350?text=${encodeURIComponent(waMessage)}`;
+                
+                // Show Custom Message Box instead of alert
+                msgOverlay.classList.add('show');
+                customMsgBox.classList.add('show');
+            }
+        });
+
+        // Proceed to WhatsApp
+        closeMsgBtn.addEventListener('click', () => {
+            msgOverlay.classList.remove('show');
+            customMsgBox.classList.remove('show');
+            if(pendingWhatsAppUrl) {
+                window.open(pendingWhatsAppUrl, '_blank');
+                form.reset(); // Reset form after handoff
+            }
+        });
+
+    </script>
+</body>
+</html>
